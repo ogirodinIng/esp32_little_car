@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESP IOT DASHBOARD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="favicon.ico">
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="topnav" style="display:none">
+            <h1>SENSOR READINGS (WEBSOCKET)</h1>
+        </div>
+        <div class="content"  style="display:none">
+            <div class="card-grid">
+                <div class="card">
+                    <p class="card-title"> PIR detection</p>
+                    <p class="reading">
+                        <svg id="pir" class="svg-button off" width="100" height="100" viewBox="0 0 100 100" onmousedown="toggleButton()" onmouseup="toggleButton()">
+                            <circle cx="50" cy="50" r="40" id="buttonCircle"></circle>
+                            <text x="50%" y="50%" id="buttonText"></text>
+                        </svg>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="content" style="display:none">
+            <div class="card-grid">
+                <div class="card">
+                    <p class="card-title">Toggle Blue Light</p>
+                    <button id="toggle-blue-light" class="my-button">Allumer/Eteindre la lumi&egrave;re bleue</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="joystick-container" id="joystick-container">
+            <div class="joystick" id="joystick"></div>
+        </div>
+    
+        <div class="info">
+            <span>Direction : <span id="direction">-</span></span>
+            <span>Valeur : <span id="value">0</span></span>
+        </div>
+
+            <!-- Affichage du flux vidéo -->
+        <div class="video-stream">
+        </div>
+        <!-- Inclure le fichier audio -->
+        <audio id="alarmSound">
+            <source src="alarme.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas l'audio HTML5.
+        </audio>
+        <script src="script.js"></script>
+    </body>
+</html>
